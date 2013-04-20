@@ -1,0 +1,7 @@
+language: ruby
+env:
+  - RUBYLIB=lib
+script: bundle exec mspec
+rvm:
+  - 1.8.7
+  - rbx-nightly-18mode
