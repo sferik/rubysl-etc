@@ -1,22 +1,21 @@
-# -*- encoding: utf-8 -*-
-require File.expand_path('../lib/rubysl-etc/version', __FILE__)
+# coding: utf-8
+require './lib/rubysl/etc/version'
 
-Gem::Specification.new do |gem|
-  gem.authors       = ["Brian Shirai"]
-  gem.email         = ["brixen@gmail.com"]
-  gem.description   = %q{Ruby Standard Library - etc}
-  gem.summary       = %q{Ruby Standard Library - etc}
-  gem.homepage      = ""
+Gem::Specification.new do |spec|
+  spec.name          = "rubysl-etc"
+  spec.version       = RubySL::Etc::VERSION
+  spec.authors       = ["Brian Shirai"]
+  spec.email         = ["brixen@gmail.com"]
+  spec.description   = %q{Ruby standard library etc.}
+  spec.summary       = %q{Ruby standard library etc.}
+  spec.homepage      = "https://github.com/rubysl/rubysl-etc"
+  spec.license       = "BSD"
 
-  gem.files         = `git ls-files`.split($\)
-  gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
-  gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
-  gem.name          = "rubysl-etc"
-  gem.require_paths = ["lib"]
-  gem.version       = RubySL::Etc::VERSION
+  spec.files         = `git ls-files`.split($/)
+  spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
+  spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
+  spec.require_paths = ["lib"]
 
-  gem.add_runtime_dependency "redcard", "~> 1.0"
-
-  gem.add_development_dependency "rake",  "~> 10.0"
-  gem.add_development_dependency "mspec", "~> 1.5"
+  spec.add_development_dependency "bundler", "~> 1.3"
+  spec.add_development_dependency "rake", "~> 10.0"
 end
