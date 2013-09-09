@@ -4,6 +4,8 @@ before_install:
   - gem update --system
   - gem --version
   - gem install rubysl-bundler
+  - gem install rubysl-rake
+  - rake
 env:
   - RVM=rbx-nightly-d21 RUBYLIB=lib
 script: bundle exec mspec spec
